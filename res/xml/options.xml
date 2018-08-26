@@ -84,6 +84,12 @@
             android:summary="@string/fprint_sucess_vib_summary"
             android:defaultValue="true" />
 
+        <com.aosip.support.preference.SystemSettingSwitchPreference
+            android:key="fp_unlock_keystore"
+            android:title="@string/fp_unlock_keystore_title"
+            android:summary="@string/fp_unlock_keystore_summary"
+            android:defaultValue="false" />
+
         <com.aosip.support.preference.SecureSettingSwitchPreference
             android:key="face_auto_unlock"
             android:title="@string/face_auto_unlock_title"
