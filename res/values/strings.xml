@@ -230,7 +230,7 @@
     <string name="quicksettings_title">Quick Settings</string>
     <string name="quicksettings_summary">Manage your quick tiles and expanded statusbar</string>
     <string name="expanded_category">Expanded</string>
-    <string name="brightness_slider_title">Brightness slider</string>
+    <string name="brightness_slider_title">Brightness slider</string> 
     <string name="tiles_title">QS Tiles</string>
     <string name="qs_tile_footer">To change the number of QS rows and columns and more, use the 3-dot menu button under the QS edit section in QS pulldown.</string>
 
@@ -517,7 +517,7 @@
     <string name="system_category">System Settings</string>
 
     <!-- Launch music player when headset is connected -->
-    <string name="headset_connect_player_title">Launch music app</string>
+    <string name="headset_connect_player_title">Launch music app</string> 
     <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
 
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
@@ -611,5 +611,11 @@
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">Fingerprint unlock</string>
     <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot without PIN/Password/Pattern\nNote: at your own risk!</string>
+
+    <!-- Lockscreen text clock align -->
+    <string name="lockscreen_clock_align_title">Q Clock Alignment</string>
+    <string name="lockscreen_clock_align0">Left</string>
+    <string name="lockscreen_clock_align1">Center</string>
+    <string name="lockscreen_clock_align2">Right</string>
 
 </resources>

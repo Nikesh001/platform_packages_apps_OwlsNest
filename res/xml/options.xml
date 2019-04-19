@@ -68,6 +68,13 @@
         android:entryValues="@array/lockscreen_clock_selection_values"
         android:defaultValue="0" />
 
+     <com.aosip.support.preference.SystemSettingListPreference
+        android:key="lockscreen_text_clock_align"
+        android:title="@string/lockscreen_clock_align_title"
+        android:entries="@array/lockscreen_clock_align_entries"
+        android:entryValues="@array/lockscreen_clock_align_values"
+        android:defaultValue="0" />
+
     <PreferenceCategory
         android:key="secure_lockscreen"
         android:title="@string/secure_lockscreen" >
