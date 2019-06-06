@@ -26,6 +26,12 @@
         android:summary="@string/app_ops_settings_summary"
         android:fragment="com.android.settings.applications.appops.AppOpsSummary"/>
 
+    <Preference
+        android:key="gaming_mode"
+        android:title="@string/gaming_mode_title"
+        android:summary="@string/gaming_mode_summary"
+        android:fragment="com.aosip.owlsnest.advanced.GamingMode" />
+
     <com.aosip.support.preference.GlobalSettingSwitchPreference
         android:key="show_cpu_overlay"
         android:title="@string/show_cpu_info"
