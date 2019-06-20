@@ -37,13 +37,17 @@ import com.aosip.owlsnest.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.aosip.support.preference.SystemSettingSwitchPreference;
+
 public class SystemCategory extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
+    private static final String GAMING_MODE_MASTER_SWITCH = "gaming_mode_master_switch";
 
     private ListPreference mFlashlightOnCall;
+    private SystemSettingSwitchPreference mGamingMode;
 
     @Override
     public int getMetricsCategory() {
@@ -56,6 +60,11 @@ public class SystemCategory extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.system);
         final PreferenceScreen prefSet = getPreferenceScreen();
+
+        mGamingMode = (SystemSettingSwitchPreference) findPreference(GAMING_MODE_MASTER_SWITCH);
+        mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.GAMING_MODE_MASTER_SWITCH, 1) == 1));
+        mGamingMode.setOnPreferenceChangeListener(this);
 
         mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
         Preference FlashOnCall = findPreference("flashlight_on_call");
@@ -87,6 +96,11 @@ public class SystemCategory extends SettingsPreferenceFragment implements
                     Settings.System.FLASHLIGHT_ON_CALL, flashlightValue);
             mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
             mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
+            return true;
+                } else if (preference == mGamingMode) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.GAMING_MODE_MASTER_SWITCH, value ? 1 : 0);
             return true;
         }
         return false;
