@@ -27,11 +27,11 @@
         android:fragment="com.android.settings.applications.appops.AppOpsSummary"/>
 
     <com.aosip.support.preference.SystemSettingSwitchPreference
-        android:key="gaming_mode_master_switch"
+        android:key="gaming_mode_enabled"
         android:fragment="com.aosip.owlsnest.advanced.GamingMode"
         android:title="@string/gaming_mode_title"
         android:summary="@string/gaming_mode_summary"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
     <com.aosip.support.preference.GlobalSettingSwitchPreference
         android:key="show_cpu_overlay"

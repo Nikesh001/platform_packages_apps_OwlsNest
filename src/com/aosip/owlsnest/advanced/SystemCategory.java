@@ -44,7 +44,7 @@ public class SystemCategory extends SettingsPreferenceFragment implements
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
-    private static final String GAMING_MODE_MASTER_SWITCH = "gaming_mode_master_switch";
+    private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
 
     private ListPreference mFlashlightOnCall;
     private SystemSettingSwitchPreference mGamingMode;
@@ -61,9 +61,9 @@ public class SystemCategory extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.system);
         final PreferenceScreen prefSet = getPreferenceScreen();
 
-        mGamingMode = (SystemSettingSwitchPreference) findPreference(GAMING_MODE_MASTER_SWITCH);
+        mGamingMode = (SystemSettingSwitchPreference) findPreference(GAMING_MODE_ENABLED);
         mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.GAMING_MODE_MASTER_SWITCH, 1) == 1));
+                Settings.System.GAMING_MODE_ENABLED, 0) == 1));
         mGamingMode.setOnPreferenceChangeListener(this);
 
         mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
@@ -100,7 +100,7 @@ public class SystemCategory extends SettingsPreferenceFragment implements
                 } else if (preference == mGamingMode) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.GAMING_MODE_MASTER_SWITCH, value ? 1 : 0);
+                    Settings.System.GAMING_MODE_ENABLED, value ? 1 : 0);
             return true;
         }
         return false;
